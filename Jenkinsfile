@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        stage ("EXTRA") {
+        stage ("--") {
 
             steps {
                 sh'''
