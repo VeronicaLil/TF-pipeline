@@ -8,7 +8,7 @@ pipelineJob('my-pipeline') {
                     }
                 }
             }
-            scriptPath('Jenkinsfile')
+            scriptPath('\..\Jenkinsfile')
         }
     }
 }
