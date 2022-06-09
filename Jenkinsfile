@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        terraform 'terraform-12'
+        terraform 'terraform'
     }
 
     stages {
@@ -19,12 +19,28 @@ pipeline {
                 '''
             }
         }
-
-        stage ("Terraform apply") {
+        
+        stage ("Terraform plan") {
             steps {
                 sh'''
-                terraform apply -auto-approve
+                terraform plan -no-color > plan.txt
                 '''
+            }
+        }
+        
+        stage ("Push in repo") {
+            steps {
+                sshagent(['my-ssh-key']) {
+                    sh'''
+                    git checkout main
+                    git remote set-url origin git@github.com:VeronicaLil/TF-pipeline.git
+                    git config --global user.email "veronicalillocci@gmail.com"
+                    git config --global user.name "VeronicaLil"
+                    git add .
+                    git commit -m "new tf plan"
+                    git push https://github.com/VeronicaLil/TF-pipeline.git
+                    '''
+                }
             }
         }
     }
