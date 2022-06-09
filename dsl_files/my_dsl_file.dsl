@@ -1,6 +1,7 @@
 pipelineJob('my-pipeline') {
     definition {
         cpsScm {
+            lightweight(lightweight=true)
             scm {
                 git {
                     remote {
@@ -16,7 +17,7 @@ pipelineJob('my-pipeline') {
                     }
             }
 
-            scriptPath('https://github.com/VeronicaLil/TF-pipeline/blob/main/Jenkinsfile')
+            scriptPath('../Jenkinsfile')
         }
     }
 }
