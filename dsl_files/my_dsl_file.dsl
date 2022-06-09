@@ -8,7 +8,7 @@ pipelineJob('my-pipeline') {
                     }
                 }
             }
-            scriptPath('TF-pipeline/Jenkinsfile')
+            scriptPath('../Jenkinsfile')
         }
     }
 }
