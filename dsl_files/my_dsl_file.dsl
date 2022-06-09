@@ -7,8 +7,16 @@ pipelineJob('my-pipeline') {
                         github('VeronicaLil/TF-pipeline')
                     }
                 }
+
+                gitSCM {
+                    branches {
+                        branchSpec {
+                            name("main")
+                        }
+                    }
             }
-            scriptPath('//github.com/VeronicaLil/TF-pipeline/blob/main/Jenkinsfile')
+
+            scriptPath('https://github.com/VeronicaLil/TF-pipeline/blob/main/Jenkinsfile')
         }
     }
 }
