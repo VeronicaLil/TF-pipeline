@@ -6,14 +6,6 @@ pipeline {
     }
 
     stages {
-        
-        stage ("Git checkout") {
-            steps {
-                sh'''
-                git 'https://github.com/VeronicaLil/TF-pipeline'
-                '''
-            }
-        }
 
         stage ("Terraform init") {
             steps {
