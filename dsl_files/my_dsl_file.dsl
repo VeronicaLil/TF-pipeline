@@ -8,7 +8,7 @@ pipelineJob('my-pipeline') {
                     }
                 }
             }
-            scriptPath('declarative-examples/simple-examples/environmentInStage.groovy')
+            scriptPath('TF-pipeline/Jenkinsfile')
         }
     }
 }
