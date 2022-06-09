@@ -27,21 +27,5 @@ pipeline {
                 '''
             }
         }
-        
-        stage ("Push in repo") {
-            steps {
-                sshagent(['my-ssh-key']) {
-                    sh'''
-                    git checkout main
-                    git remote set-url origin git@github.com:VeronicaLil/TF-pipeline.git
-                    git config --global user.email "veronicalillocci@gmail.com"
-                    git config --global user.name "VeronicaLil"
-                    git add .
-                    git commit -m "new tf plan"
-                    git push https://github.com/VeronicaLil/TF-pipeline.git
-                    '''
-                }
-            }
-        }
     }
 }
