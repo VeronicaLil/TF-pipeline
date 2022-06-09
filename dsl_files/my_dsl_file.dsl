@@ -4,7 +4,7 @@ pipelineJob('my-pipeline') {
             scm {
                 git {
                     remote {
-                        github('jenkinsci/pipeline-examples')
+                        github('VeronicaLil/TF-pipeline')
                     }
                 }
             }
