@@ -8,7 +8,7 @@ pipelineJob('my-pipeline') {
                     }
                 }
             }
-            scriptPath('https://github.com/VeronicaLil/TF-pipeline/blob/main/Jenkinsfile')
+            scriptPath('//github.com/VeronicaLil/TF-pipeline/blob/main/Jenkinsfile')
         }
     }
 }
